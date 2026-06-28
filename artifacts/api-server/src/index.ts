@@ -1,5 +1,6 @@
 import app from "./app";
 import { logger } from "./lib/logger";
+import { startBot, stopBot } from "./lib/bot-manager";
 
 const rawPort = process.env["PORT"];
 
@@ -22,4 +23,24 @@ app.listen(port, (err) => {
   }
 
   logger.info({ port }, "Server listening");
+
+  // Only manage the bot process when MANAGE_BOT=true (set in production).
+  // In development the "Alya Bot" workflow runs the bot separately.
+  if (process.env["MANAGE_BOT"] === "true") {
+    startBot();
+  } else {
+    logger.info("MANAGE_BOT not set — bot managed externally (dev mode)");
+  }
+});
+
+process.on("SIGTERM", () => {
+  logger.info("SIGTERM received, stopping bot");
+  stopBot();
+  process.exit(0);
+});
+
+process.on("SIGINT", () => {
+  logger.info("SIGINT received, stopping bot");
+  stopBot();
+  process.exit(0);
 });

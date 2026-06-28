@@ -46,3 +46,6 @@ packages = ["libsodium"]
 [userenv]
 
 [userenv.shared]
+
+[userenv.production]
+MANAGE_BOT = "true"
