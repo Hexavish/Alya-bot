@@ -8,7 +8,7 @@ BOT_VERSION: Final = "1.0.0"
 OWNER_IDS: list[int] = [int(x) for x in os.getenv("OWNER_IDS", "0").split(",") if x.strip().isdigit()]
 
 SUPPORT_SERVER: Final = os.getenv("SUPPORT_SERVER", "https://discord.gg/yourinvite")
-INVITE_LINK: Final = os.getenv("INVITE_LINK", "https://discord.com/api/oauth2/authorize?client_id=YOUR_ID&permissions=8&scope=bot%20applications.commands")
+INVITE_LINK: Final = os.getenv("INVITE_LINK", "https://discord.com/oauth2/authorize?client_id=1520801915959644181&permissions=8&integration_type=0&scope=bot+applications.commands")
 
 PINK: Final = 0xFF69B4
 PURPLE: Final = 0x9B59B6
