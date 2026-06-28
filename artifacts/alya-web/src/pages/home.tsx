@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+
+const INVITE_LINK = import.meta.env.VITE_INVITE_LINK || "#invite";
+const SUPPORT_LINK = import.meta.env.VITE_SUPPORT_SERVER || "#support";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -129,10 +132,10 @@ export default function Home() {
         </div>
         <div className="flex gap-4">
           <Button variant="ghost" className="text-foreground/80 hover:text-primary hidden sm:inline-flex" asChild>
-            <a href="#support">Support</a>
+            <a href={SUPPORT_LINK}>Support</a>
           </Button>
           <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 shadow-lg shadow-primary/20" asChild>
-            <a href="#invite">Add to Discord</a>
+            <a href={INVITE_LINK}>Add to Discord</a>
           </Button>
         </div>
       </nav>
@@ -162,7 +165,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 text-lg shadow-[0_0_20px_rgba(244,114,182,0.3)] transition-all hover:scale-105" asChild>
-                <a href="#invite">Invite Alya</a>
+                <a href={INVITE_LINK}>Invite Alya</a>
               </Button>
               <Button size="lg" variant="outline" className="rounded-full px-8 text-lg border-primary/20 hover:bg-primary/10 hover:border-primary/40 transition-all" asChild>
                 <a href="#features">See Features</a>
@@ -435,10 +438,10 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-10 text-lg h-14 shadow-lg shadow-primary/20" asChild>
-              <a href="#invite">Add to Discord</a>
+              <a href={INVITE_LINK}>Add to Discord</a>
             </Button>
             <Button size="lg" variant="secondary" className="rounded-full px-10 text-lg h-14 bg-secondary/10 hover:bg-secondary/20 text-secondary border border-secondary/20" asChild>
-              <a href="#support">Support Server</a>
+              <a href={SUPPORT_LINK}>Support Server</a>
             </Button>
           </div>
         </motion.div>
