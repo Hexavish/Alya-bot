@@ -1,0 +1,14 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "EeSNKIaHh36XZLa_B-CM5"
+uri = "file://artifacts/alya-web/src/assets/alya-mascot.png"
+type = "image"
+title = "Anime mascot Alya"
+
+[[generated]]
+id = "38u6zQFFcKZUzc54Rsil2"
+uri = "file://artifacts/alya-web/src/assets/dreamy-bg.png"
+type = "image"
+title = "Dreamy anime night background"
